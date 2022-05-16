@@ -50,25 +50,25 @@ public class LoginServlet extends HttpServlet {
 					response.addCookie(ckReme);
                     if(loginDao.Role(loginBean))
                        {
-                	     System.out.println("Hello Administrator");
+                	     //System.out.println("Hello Administrator");
                 	     session.setAttribute("Role", "Admin");
                 	     if(link==null)
               	           {
-              	             System.out.println(link);
+              	             //System.out.println(link);
               	             rd = request.getRequestDispatcher("Home.jsp");
 						     rd.forward(request, response);
               	          }
                 	      else
                 	       {
-                		      System.out.println(link);
+                		     // System.out.println(link);
                 		      session.removeAttribute("url");
-                    	      response.sendRedirect(link);
+                    	              response.sendRedirect(link);
                 	       }
                       }
                         else {
-                	       System.out.println("Hello User");
+                	       //System.out.println("Hello User");
                 	       session.setAttribute("Role", "User");
-                	       System.out.println(link);
+                	       //System.out.println(link);
                 	       if(link==null)
               	           {
                 	         rd = request.getRequestDispatcher("Home.jsp");
@@ -76,7 +76,7 @@ public class LoginServlet extends HttpServlet {
               	           }
                 	       else 
               	           {
-              	        	   System.out.println(link);
+              	        	   //System.out.println(link);
               	        	   session.removeAttribute("url");
                    	           response.sendRedirect(link);  
               	           }
@@ -85,7 +85,7 @@ public class LoginServlet extends HttpServlet {
                 else {
  						if(loginDao.Role(loginBean))
                         {
-                 	       System.out.println("Hello Administrator->No Cookie");
+                 	       //System.out.println("Hello Administrator->(No Cookie or consisting cookie)");
                  	      session.setAttribute("Role", "Admin");
                  	       System.out.println(link);
                  	       if(link==null)
@@ -96,23 +96,23 @@ public class LoginServlet extends HttpServlet {
  						    rd.forward(request, response);
               	             }
               	             else {
-               	                System.out.println(link);
+               	               // System.out.println(link);
+				     session.removeAttribute("url");
                	                response.sendRedirect(link);
               	               }
                          }
                       else {
-                 	           System.out.println("Hello User->No Cookie");
-                 	           System.out.println(link);
+                 	           //System.out.println("Hello User->(No Cookie or consisting cookie)");
+                 	          // System.out.println(link);
                  	          session.setAttribute("Role", "User");
                  	           if(link==null)
                  	           {
-                 	             System.out.println(link);
-                 	            
                  	            rd = request.getRequestDispatcher("Home.jsp");
  						    rd.forward(request, response);
                  	           }
                  	           else {
-                  	             System.out.println(link);
+                  	             //System.out.println(link);
+					   session.removeAttribute("url");
                   	             response.sendRedirect(link);
                  	           }
                          }
