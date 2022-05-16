@@ -92,7 +92,8 @@ public class LoginServlet extends HttpServlet {
               	             {
               	              System.out.println(link);
               	              
-              	              response.sendRedirect("Home.jsp");
+              	              rd = request.getRequestDispatcher("Home.jsp");
+ 						    rd.forward(request, response);
               	             }
               	             else {
                	                System.out.println(link);
@@ -107,7 +108,8 @@ public class LoginServlet extends HttpServlet {
                  	           {
                  	             System.out.println(link);
                  	            
-                 	            response.sendRedirect("Home.jsp");
+                 	            rd = request.getRequestDispatcher("Home.jsp");
+ 						    rd.forward(request, response);
                  	           }
                  	           else {
                   	             System.out.println(link);
