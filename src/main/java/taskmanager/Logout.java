@@ -16,8 +16,8 @@ public class Logout extends HttpServlet{
 		session.removeAttribute("username");
 		session.removeAttribute("password");
 		session.removeAttribute("Role");
-		Cookie[] cookies = req.getCookies();
-		/*for (Cookie ck : cookies) {
+		/*Cookie[] cookies = req.getCookies();
+		for (Cookie ck : cookies) {
 			if (ck.getName().equalsIgnoreCase("Cookuname")) {
 				ck.setMaxAge(0);
 				res.addCookie(ck);
